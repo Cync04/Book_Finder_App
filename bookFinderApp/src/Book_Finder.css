@@ -6,6 +6,13 @@
 }
 
 .book-card {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 16px;
@@ -14,6 +21,7 @@
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .book-card p, .book-card h3 {
@@ -21,10 +29,35 @@
     overflow-wrap: break-word;
 }
 
+.book-card p {
+  font-size: 14px;
+  color: #555;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* allow 3 lines */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+.book-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
 .book-card h3 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* allow 2 lines */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .book-card:hover {
@@ -63,4 +96,11 @@
 
 button {
     background-color: #1a1a1a;
+}
+
+.filter-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
 }

@@ -50,6 +50,8 @@ function Book_Finder() {
         fetchRandomBooks();
     }, [navigate]);
 
+    // if filter selected, automatically search for that genre
+
     return (
         <>
             <div>
@@ -63,6 +65,18 @@ function Book_Finder() {
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder='Search for books...' />
                 {query.trim() !== '' && <button onClick={searchBooks}>Search</button>}
+                
+                <div className="filter-buttons">
+                    <label>Quick Filters:</label>
+                        <select id="filter-select" onChange={(e) => setQuery(e.target.value)}>
+                            <option value="">Select Genre</option>
+                            <option value="fiction">Fiction</option>
+                            <option value="non-fiction">Non-Fiction</option>
+                            <option value="science">Science</option>
+                            <option value="history">History</option>
+                            <option value="biography">Biography</option>
+                        </select>
+                </div>
 
             <div className = "book-grid">
                 {books.map((book) => {
